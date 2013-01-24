@@ -9,6 +9,9 @@ var getImdbElement = function(rating,url) {
 var detectMovie = function(){
   	var matched=[];
 	$("a.external[href*='imdb.com/title/tt']").each(function(){
+		if($(this).parents(".reference-text").length!=0){
+			return;//Link is a citation reference not external link
+		}
 		m=this.href.match(/title\/(tt[a-z0-9]+)\/?$/i);
 		if(m){
 			matched.push(m);
