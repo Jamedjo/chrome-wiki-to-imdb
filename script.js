@@ -2,28 +2,30 @@
 // http://imdbapi.org/?id=tt0047296&type=json&plot=none&episode=0&lang=en-US&aka=simple&release=simple&business=0&tech=0
 
 var getImdbElement = function(rating,url) {
-	return "<div style='float:right;'><a href='"+url+"'>"+rating+"</a></div>";
-  var tag = $('<span/>');
-  tag.html(' (' + rating + ') ');
-  tag.css('color', '#444');
-  return tag;
+	var el = "<a href='"+url+"'><div class='imdb-rating' style='background-image:url("+chrome.extension.getURL("imdb-star.png")+")'>"+rating+"</div></a>";
+	return el;
 };
 
 var detectMovie = function(){
-  	var matched=false;
+  	var matched=[];
 	$("a.external[href*='imdb.com/title/tt']").each(function(){
-		if(!matched) {
-			matched=this.href.match(/title\/(tt[a-z0-9]+)/i);
-		}});
-	return matched;
+		m=this.href.match(/title\/(tt[a-z0-9]+)\/?$/i);
+		if(m){
+			matched.push(m);
+		}
+	});
+	return matched[matched.length-1];//Last match is most likely to be the one in 'External References'
 };
-
-
 
 var fetchRating = function(tt,ratingCallback){
 	if(tt){
 		$.get('http://www.omdbapi.com/?i='+tt+'&tomatoes=true', function(response, xhr) {
-			var data = JSON.parse(response);
+			var data;
+			try{
+				data = JSON.parse(response);
+			} catch(e) {
+				return;
+			}
 			// Fail fast if imdbRating is missing
 			if (!data || !data.imdbRating) {
 				return;
