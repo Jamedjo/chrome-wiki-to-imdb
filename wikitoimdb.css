@@ -13,3 +13,8 @@ font-family: tahoma;
 background-repeat: no-repeat;
 background-size: 100%;
 }
+
+.rated-movie .topicon {
+	margin-right:3em;
+	margin-top:0.4em;
+}

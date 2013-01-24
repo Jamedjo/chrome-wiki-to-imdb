@@ -45,6 +45,7 @@ $(function() {
   	var tt = m[1];
  	var url = m.input;
 	var ratingCallback = function(r_imdb){
+		$("body").addClass("rated-movie");
 		$("h1#firstHeading").prepend(getImdbElement(r_imdb,url));
 	};
 	fetchRating(tt,ratingCallback);
