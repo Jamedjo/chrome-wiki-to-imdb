@@ -1,0 +1,15 @@
+{
+	"name": "WikiToIMDB",
+	"version": "0.1.0",
+	"description": "An extension for displaying IMDB ratings in listings.",
+	"manifest_version": 2,
+	"permissions": [
+		"http://www.omdbapi.com/"
+	],
+	"content_scripts": [{
+		"js": ["jquery.min.js",
+			   "script.js"],
+		"matches": ["http://*.wikipedia.org/wiki/*",
+					"https://*.wikipedia.org/wiki/*"]
+	}]
+}
