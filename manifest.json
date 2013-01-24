@@ -3,7 +3,9 @@
 	"version": "0.1.0",
 	"description": "An extension for displaying IMDB ratings in listings.",
 	"icons": {
-      "128": "w2i-128.png"
+      "128": "w2i-128.png",
+      "48": "w2i-48.png",
+      "16": "w2i-16.png"
     },
 	"manifest_version": 2,
 	"permissions": [
