@@ -3,9 +3,9 @@ Wiki to IMDB
 
 [Chrome extension](https://chrome.google.com/webstore/detail/wikitoimdb/emgoinndehfmamfphfgpgojbencbjeeh) to add imdb rating and link to top right of Wikipedia movie articles.
 
--Works on any article which links to IMDB as an 'External Link'
--Fetches ratings from OMDBapi.com
--Clicking the rating star takes you to IMDB!
+- Works on any article which links to IMDB as an 'External Link'
+- Fetches ratings from OMDBapi.com
+- Clicking the rating star takes you to IMDB!
 
 ![Screenshot](https://lh3.googleusercontent.com/EcBIBxG6FqMz8o8U816ScByovQdnCKsxohGtkgGsiDyi3_Zdv06deSmHATxEUJWMXHWTxMuqCPk=s640-h400-e365-rw)
 

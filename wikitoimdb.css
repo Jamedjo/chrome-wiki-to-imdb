@@ -15,6 +15,10 @@ background-size: 100%;
 }
 
 .rated-movie .topicon {
-	margin-right:3em;
-	margin-top:0.4em;
+    right: 0px !important;
+    margin-right: 3.7em;
+}
+
+.rated-movie .topicon ~ .topicon {
+    right: 25px !important;
 }
